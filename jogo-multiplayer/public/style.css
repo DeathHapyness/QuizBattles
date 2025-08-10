@@ -47,7 +47,7 @@ body {
   font-size: 25px;
   text-align: center;
 
-  background: linear-gradient(270deg, #ff3f04, #ff891b, #ffa51e, #ffc559);
+  background: linear-gradient(270deg, #065f46, #10b981, #34d399, #2dd4bf);
   background-size: 600% 600%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -67,7 +67,7 @@ body {
 }
 
 input:hover {
-  box-shadow: #ff9d1e 0px 0px 15px;
+  box-shadow: #34d399 0px 0px 15px;
 }
 
 .tela-inicial input[type='text'],
@@ -86,7 +86,7 @@ input:hover {
 .tela-inicial select:focus {
   background-color: #4a4a4a;
   outline: none;
-  box-shadow: 0 0 8px #ff5722;
+  box-shadow: 0 0 8px #99f6e4;
 }
 
 .tela-inicial button {
@@ -96,14 +96,14 @@ input:hover {
   font-weight: 700;
   font-size: 1.1rem;
   color: white;
-  background: linear-gradient(45deg, #ff5722, #ff6f00);
+  background: linear-gradient(45deg, #2dd4bf, #99f6e4);
   cursor: pointer;
   transition: background 0.4s ease;
   user-select: none;
 }
 
 .tela-inicial button:hover {
-  background: linear-gradient(45deg, #ff6f00, #ff5722);
+  background: linear-gradient(45deg, #2dd4bf, #99f6e4);
 }
 
 .tela-inicial hr {
@@ -138,7 +138,7 @@ input:hover {
   min-height: 950px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 20px #e47011aa;
+  box-shadow: 0 0 20px #99f6e4;
   overflow: hidden;
   user-select: none;
 }
@@ -153,7 +153,7 @@ input:hover {
   color: #ffffff;
   font-weight: 700;
   font-size: 1.1rem;
-  text-shadow: 0 0 6px #ff9100b9;
+  text-shadow: 0 0 6px #99f6e4;
 }
 
 .game-header {
@@ -185,13 +185,13 @@ input:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, #ff5722, #ff6f00);
+  background: linear-gradient(45deg, #2dd4bf, #99f6e4);
   color: white;
-  box-shadow: 0 3px 8px #ff5722bb;
+  box-shadow: 0 3px 8px #99f6e4;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(45deg, #ff6f00, #ff5722);
+  background: linear-gradient(45deg, #2dd4bf, #99f6e4);
 }
 
 .btn-danger {
@@ -253,7 +253,7 @@ input:hover {
   text-align: center;
   font-weight: 700;
   color: #ffffff;
-  box-shadow: 0 0 12px #ff6f0080 inset;
+  box-shadow: 0 0 12px #065f46 inset;
 }
 
 .area-pergunta {
@@ -261,7 +261,7 @@ input:hover {
   border-radius: 12px;
   padding: 18px;
   font-size: 1.1rem;
-  box-shadow: 0 0 10px #ff6f00aa inset;
+  box-shadow: 0 0 10px #065f46 inset;
   color: #fff;
   user-select: text;
 }
@@ -278,7 +278,7 @@ input:hover {
   padding: 10px 8px;
   border-bottom: 1px solid #555;
   font-weight: 600;
-  color: #ff6f00;
+  color: #dfffd8;
 }
 
 .chat-container {
@@ -299,7 +299,7 @@ input:hover {
   white-space: pre-wrap;
   color: #eee;
   word-wrap: break-word;
-  box-shadow: inset 0 0 12px #ff6f00aa;
+  box-shadow: inset 0 0 12px #065f46;
 }
 
 #inputPalpite {
@@ -312,7 +312,7 @@ input:hover {
   margin-right: 15px;
   background-color: #555;
   color: #eee;
-  box-shadow: 0 0 12px #ff6f00aa inset;
+  box-shadow: 0 0 12px #065f46 inset;
   transition: background-color 0.3s ease;
 }
 
@@ -331,25 +331,33 @@ input:hover {
   padding: 10px;
 }
 
-.player-box {
-  background-color: #4a90e2;
-  color: white;
-  padding: 15px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
-  min-width: 120px;
-  text-align: center;
-  user-select: none;
-  transition: transform 0.2s ease;
-  cursor: default;
+li {
+  flex: 1 1 calc(25% - 10px);
+  max-width: calc(15% - 10px);
+  border-radius: 8px;
+  width: 10px;
 }
 
 .player-box:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }
-.player-box.you {
-  background-color: #ff5722;
-  box-shadow: 0 4px 6px rgba(255, 87, 34, 0.6);
+
+h3 {
+  background: linear-gradient(270deg, #00aeff, #00fff2, #00ffea, #00ff88);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgbShift 7s ease infinite;
+}
+@keyframes rgbShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
