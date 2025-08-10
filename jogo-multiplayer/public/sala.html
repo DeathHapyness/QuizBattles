@@ -1,14 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Sala - Jogo da Adivinhação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Honk&display=swap"
+      rel="stylesheet"
+    />
+    <title>QuizBattles</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Sala do Jogo</h1>
-    <div id="info-sala"></div>
-    <div id="jogo"></div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/main.js"></script>
+    <section id="telaInicial" class="tela-inicial">
+      <h1>QuizBattles</h1>
+
+      <label for="nome">Seu Nome:</label>
+      <input type="text" id="nome" placeholder="Digite seu nome" />
+
+      <label for="tema">Tema da Sala:</label>
+      <select id="tema">
+        <option value="numeros">Números</option>
+        <option value="matematica">Matemática</option>
+        <option value="geografia">Geografia</option>
+      </select>
+
+      <button id="btnCriar">Criar Sala</button>
+
+      <hr />
+
+      <label for="salaId">Código da Sala:</label>
+      <input type="text" id="salaId" placeholder="Ex: ABC123" maxlength="6" />
+
+      <button id="btnEntrar">Entrar na Sala</button>
+
+      <pre id="mensagem" class="mensagem"></pre>
+    </section>
+
+    <section id="game" class="game-container hidden">
+      <header class="game-header">
+        <div>
+          <span><strong>Sala:</strong></span>
+          <span id="codigoSala" class="highlight">ABC123</span>
+        </div>
+        <div>
+          <span><strong>Você é:</strong></span>
+          <span id="nomeJogador" class="highlight">Jogador1</span>
+        </div>
+        <button id="btnSair" class="btn btn-danger" title="Sair da sala">
+          ✕
+        </button>
+      </header>
+
+      <main class="game-main">
+        <section class="left-panel">
+          <div id="infoJogo" class="info-jogo">Aguardando jogadores...</div>
+          <div id="areaPergunta" class="area-pergunta hidden">
+            <h2>Pergunta</h2>
+            <p id="perguntaTexto">Aqui vai a pergunta</p>
+          </div>
+        </section>
+
+        <section class="right-panel">
+          <div class="players-list">
+            <h3>Jogadores na sala</h3>
+            <ul id="listaJogadores"></ul>
+          </div>
+
+          <div class="chat-container">
+            <h3>Chat</h3>
+            <div id="chatMensagens" class="chat-mensagens"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="game-footer">
+        <input
+          id="inputPalpite"
+          type="text"
+          placeholder="Digite seu palpite ou mensagem..."
+          maxlength="150"
+          autocomplete="off"
+        />
+        <button id="btnEnviarPalpite" class="btn btn-primary">Enviar</button>
+      </footer>
+    </section>
+
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

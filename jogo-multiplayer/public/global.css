@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px auto;
+  max-width: 400px;
+  padding: 10px;
+  /* background-image: url('https://media.istockphoto.com/id/1171575065/pt/vídeo/retro-land.jpg?b=1&s=640x640&k=20&c=NY-yIbdE5JQuxrZ72JL9a8kAKvRMXW57VAKiIOQi6oc='); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 5px black;
+  background-color: #000000;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: #c3c3c421;
+  border-radius: 20px;
+  font-family: 'Honk', cursive;
+  font-size: 80px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: honeycomb, sans-serif;
+  font-size: 1.6em;
+  text-align: center;
+
+  background: linear-gradient(270deg, #00aeff, #00fff2, #00ffea, #00ff88);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgbShift 7s ease infinite;
+}
+
+@keyframes rgbShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+input[type='text'],
+select {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 2px solid;
+  background-color: #949494;
+  color: #00000060;
+  color: white;
+}
+
+input:hover {
+  box-shadow: #00ff88 0px 0px 15px;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #fcfcfc3d;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-family: honeycomb, sans-serif;
+}
+
+button:hover {
+  box-shadow: #00ff88 0px 0px 10px;
+}
+
+select:hover {
+  box-shadow: #00ff88 0px 0px 10px;
+}
+
+#mensagem {
+  margin-top: 20px;
+  padding: 10px;
+  background: #000000;
+  border-radius: 4px;
+  min-height: 40px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+}

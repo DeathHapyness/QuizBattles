@@ -1,0 +1,355 @@
+/* Reset básico para garantir consistência */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  user-select: none;
+}
+
+.tela-inicial {
+  background-color: #2d2d2d;
+  border-radius: 12px;
+  width: 400px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.tela-inicial h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  font-family: 'Honk', cursive;
+  font-size: 65px;
+  text-align: center;
+}
+
+.tela-inicial label {
+  font-weight: 600;
+  text-align: left;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  font-size: 25px;
+  text-align: center;
+
+  background: linear-gradient(270deg, #ff3f04, #ff891b, #ffa51e, #ffc559);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgbShift 7s ease infinite;
+}
+
+@keyframes rgbShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+input:hover {
+  box-shadow: #ff9d1e 0px 0px 15px;
+}
+
+.tela-inicial input[type='text'],
+.tela-inicial select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background-color: #3a3a3a;
+  color: #eee;
+  transition: background-color 0.3s ease;
+}
+
+.tela-inicial input[type='text']:focus,
+.tela-inicial select:focus {
+  background-color: #4a4a4a;
+  outline: none;
+  box-shadow: 0 0 8px #ff5722;
+}
+
+.tela-inicial button {
+  padding: 14px 0;
+  border-radius: 30px;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white;
+  background: linear-gradient(45deg, #ff5722, #ff6f00);
+  cursor: pointer;
+  transition: background 0.4s ease;
+  user-select: none;
+}
+
+.tela-inicial button:hover {
+  background: linear-gradient(45deg, #ff6f00, #ff5722);
+}
+
+.tela-inicial hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
+
+.mensagem {
+  background-color: #3a3a3a;
+  padding: 12px 15px;
+  border-radius: 10px;
+  min-height: 80px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+/* --- JOGO --- */
+
+.hidden {
+  display: none !important;
+}
+
+.game-container {
+  background-color: #333;
+  border-radius: 12px;
+  width: 90vw;
+  max-width: 2300px;
+  min-height: 950px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px #e47011aa;
+  overflow: hidden;
+  user-select: none;
+}
+
+.game-header,
+.game-footer {
+  background-color: #444;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-shadow: 0 0 6px #ff9100b9;
+}
+
+.game-header {
+  border-radius: 12px 12px 0 0;
+}
+
+.game-footer {
+  border-radius: 0 0 12px 12px;
+}
+
+.highlight {
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #ff5722, #ff6f00);
+  color: white;
+  box-shadow: 0 3px 8px #ff5722bb;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #ff6f00, #ff5722);
+}
+
+.btn-danger {
+  background-color: #d32f2f;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 1;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #b71c1caa;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #b71c1c;
+}
+
+.game-main {
+  flex: 1;
+  display: flex;
+  padding: 25px 30px;
+  gap: 25px;
+  background-color: #282828;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+}
+
+.left-panel,
+.right-panel {
+  background-color: #3a3a3a;
+  border-radius: 12px;
+  padding: 25px;
+  color: #ddd;
+  box-shadow: inset 0 0 15px #1c1c1c;
+  overflow-y: auto;
+}
+
+.left-panel {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.right-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info-jogo {
+  background-color: #4a4a4a;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  min-height: 70px;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow: 0 0 12px #ff6f0080 inset;
+}
+
+.area-pergunta {
+  background-color: #555;
+  border-radius: 12px;
+  padding: 18px;
+  font-size: 1.1rem;
+  box-shadow: 0 0 10px #ff6f00aa inset;
+  color: #fff;
+  user-select: text;
+}
+
+.players-list ul {
+  list-style: none;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-left: 0;
+  margin: 0;
+}
+
+.players-list li {
+  padding: 10px 8px;
+  border-bottom: 1px solid #555;
+  font-weight: 600;
+  color: #ff6f00;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-mensagens {
+  flex: 1;
+  background-color: #4a4a4a;
+  border-radius: 12px;
+  padding: 15px;
+  overflow-y: auto;
+  max-height: 300px;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  color: #eee;
+  word-wrap: break-word;
+  box-shadow: inset 0 0 12px #ff6f00aa;
+}
+
+#inputPalpite {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.1rem;
+  outline: none;
+  margin-right: 15px;
+  background-color: #555;
+  color: #eee;
+  box-shadow: 0 0 12px #ff6f00aa inset;
+  transition: background-color 0.3s ease;
+}
+
+#inputPalpite:focus {
+  background-color: #666;
+}
+
+.game-footer {
+  display: flex;
+  align-items: center;
+}
+#listaJogadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+.player-box {
+  background-color: #4a90e2;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  min-width: 120px;
+  text-align: center;
+  user-select: none;
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+.player-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+.player-box.you {
+  background-color: #ff5722;
+  box-shadow: 0 4px 6px rgba(255, 87, 34, 0.6);
+}
